@@ -23,4 +23,28 @@ async function getUserDetails(username:string){
     
 }
 
-getUserDetails("LikhithMar14")
+// getUserDetails("LikhithMar14")
+async function updateUserDetails(username:string){
+    const res = await prisma.user.updateMany({
+        where:{
+            username
+        },
+        data:{
+            city:"Zurich"
+        }
+    })
+}
+
+// insertUser("dummy","dummy ke paas kya hi password hoga",21,"neerukonda")
+// updateUserDetails("LikhithMar14")
+// getUserDetails("LikhithMar14")
+
+async function deleteUserDetails(username:string){
+    const res = await prisma.user.delete({
+        where:{
+            username
+        }
+    })
+}
+deleteUserDetails("dummy")
+
